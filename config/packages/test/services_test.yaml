@@ -1,0 +1,33 @@
+services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    # Remplacez explicitement les services abstraits par des implémentations concrètes
+    App\Service\TaxServiceInterface:
+        class: App\Tests\Dummy\DummyTaxService
+        public: true
+
+    App\Service\MembershipServiceInterface:
+        class: App\Tests\Dummy\DummyMembershipService
+        public: true
+
+    App\Service\NotificationServiceInterface:
+        class: App\Tests\Dummy\DummyNotificationService
+        public: true
+
+    App\Service\WeatherServiceInterface:
+        class: App\Tests\Dummy\DummyWeatherService
+        public: true
+
+    App\Service\EmailServiceInterface:
+        class: App\Tests\Dummy\DummyEmailService
+        public: true
+
+    # Assurez-vous que ces services sont publics
+    App\Service\ProductService:
+        public: true
+
+    App\Service\OrderService:
+        public: true

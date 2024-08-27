@@ -1,0 +1,14 @@
+imports:
+    - { resource: services.yaml }
+    - { resource: packages/test/*.yaml }
+
+services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    # Répétez ici les définitions de services de test si nécessaire
+    App\Service\TaxServiceInterface:
+        class: App\Tests\Dummy\DummyTaxService
+        public: true
